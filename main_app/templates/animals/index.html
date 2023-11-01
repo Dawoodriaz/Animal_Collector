@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Animals List</h1>
+
+{% for animal in animals %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ animal.animal }}</span>
+      <p>Food Chain: {{ animal.eat }}</p>
+      <p>Description: {{ animal.description }}</p>
+      {% if animal.age > 0 %}
+        <p>Age: {{ animal.age }}</p>
+      {% else %}
+        <p>Age: Not Born Yet</p>
+      {% endif %}
+      {% if animal.price > 0 %}
+      <p>Price: {{ animal.price }}</p>
+    {% else %}
+      <p>Price: For Free</p>
+    {% endif %}
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
