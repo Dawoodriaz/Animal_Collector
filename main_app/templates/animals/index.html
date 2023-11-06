@@ -5,6 +5,7 @@
 
 {% for animal in animals %}
   <div class="card">
+    <a  href="{% url 'detail' animal.id %}" >
     <div class="card-content">
       <span class="card-title">{{ animal.animal }}</span>
       <p>Food Chain: {{ animal.eat }}</p>
@@ -19,7 +20,14 @@
     {% else %}
       <p>Price: For Free</p>
     {% endif %}
+    <div>
+
+      {%load static %}
+      <img width="100px" height="100px" src="{% static animal.image|cut:'main_app/static/' %}" alt=""/>
+      </div>
+
     </div>
+    </a>
   </div>
 {% endfor %}
 

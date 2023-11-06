@@ -77,11 +77,9 @@ WSGI_APPLICATION = 'animalCollector.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST':'flora.db.elephantsql.com',
-        'PORT':'5432',
-        'USER':'vtwjzbkj',
-        'PASSWORD':'UcXyxZi2ZrBELWko3usn2zOH3gRO1C18',
-        'NAME':'vtwjzbkj',
+        'USER':'postgres',
+        'PASSWORD':'123456789',
+        'NAME':'animalCollectorrr',
     }
 }
 
