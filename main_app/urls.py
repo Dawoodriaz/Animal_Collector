@@ -18,24 +18,26 @@ path('animals/<int:pk>/delete/', views.AnimalDelete.as_view(), name='animals_del
 
 path('animals/<int:animal_id>/add_Feeding/', views.add_feeding , name='add_feeding' ),
 
-#Urls for Toy Crud Operations
-path('toys/', views.ToyList.as_view(), name="toys_index"),
-path('toys/<int:pk>/', views.ToyDetail.as_view(),name='toys_detail'),
-path('toys/create/',views.ToyCreate.as_view(),name='toys_create'),
-path('toys/<int:pk>/update/',views.ToyUpdate.as_view(),name='toys_update'),
-path('toys/<int:pk>/delete/',views.ToyDelete.as_view(),name='toys_delete'),
+#Urls for Country Crud Operations
+path('countries/', views.CountryList.as_view(), name="countries_index"),
+path('countries/<int:pk>/', views.CountryDetail.as_view(),name='countries_detail'),
+path('countries/create/',views.CountryCreate.as_view(),name='countries_create'),
+path('countries/<int:pk>/update/',views.CountryUpdate.as_view(),name='countries_update'),
+path('countries/<int:pk>/delete/',views.CountryDelete.as_view(),name='countries_delete'),
 
 
 
 
-#associate a toy with a animal (M:M)
+#associate a country with a animal (M:M)
 
-path ('animals/<int:animal_id>/assoc_toy/<int:toy_id>/', views.assoc_toy, name="assoc_toy"),
-
-
-#UN- associate a toy with a animal (M:M)
-
-path ('animals/<int:animal_id>/unassoc_toy/<int:toy_id>/', views.unassoc_toy, name="unassoc_toy"),
+path ('animals/<int:animal_id>/assoc_country/<int:country_id>/', views.assoc_country, name="assoc_country"),
 
 
+#UN- associate a country with a animal (M:M)
+
+path ('animals/<int:animal_id>/unassoc_country/<int:country_id>/', views.unassoc_country, name="unassoc_country"),
+
+#Sign Up URl
+
+path('accounts/signup/',views.signup,name='signup')
 ]

@@ -20,11 +20,24 @@
           <li><a href="/" class="left brand-logo"> Exotic Animal Collector</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="{% url 'toys_create' %}">Add a toy</a></li>
-          <li><a href="{% url 'toys_index' %}">View All Toys</a></li>
-          <li><a href="{% url 'animals_create' %}">Add an Animal</a></li>
-          <li><a href="/animals">View All My Animals</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+
+          {% if user.is_authenticated %}
+
+          <li><a href="{% url 'countries_create' %}">Add a Country </a></li>
+          <li><a href="{% url 'countries_index' %}">View All Countries</a></li>
+          <li><a href="{% url 'animals_create' %}">Add a Cat</a></li>
+          <li><a href="{% url 'index' %}">View All My Animals</a></li>
+          <li><a href="{% url 'logout' %}"> Log Out </a></li>
+          Hi {{ user.username }}
+
+          {% else %}
+          <li> <a href="{%  url 'login' %}"> Login </a></li>          
+          <li> <a href="{%  url 'signup' %}"> Sign Up </a></li>          
+
+
+          {% endif %}
+
         </ul>
       </div>
     </nav>
@@ -36,7 +49,7 @@
   </main>
   <footer>
     <div class="righttt">
-      All Rights Reserved, &copy; 2023 Cat Collector
+      All Rights Reserved, &copy; 2023 Exotic Animal Collector
     </div>
   </footer>
 </body>

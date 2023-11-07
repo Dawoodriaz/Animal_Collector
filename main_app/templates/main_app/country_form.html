@@ -10,15 +10,13 @@
 <h1> Edit <span class="teal-text"> {{object.name}}  </span></h1>
 
 {% else %}
-<h1> Add Toy </h1>
+<h1> Add Country </h1>
 {% endif%}
 
-<form action="" method="POST">
+<form action="" method="POST" class="blur-background" class="blur-background">
 {% csrf_token %}
-<table>
+<table class="no-border">
 {{ form.as_table }}
-
-
 </table>
 <input type="submit" value="Submit!" class="btn">
 
