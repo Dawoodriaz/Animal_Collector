@@ -31,7 +31,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class AnimalCreate(LoginRequiredMixin,CreateView):
   model= Animal
-  fields ='__all__'
+  fields =['animal','eat','description','age','price','image']
   
   
 class AnimalUpdate(LoginRequiredMixin,UpdateView):
